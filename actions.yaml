@@ -1,0 +1,2 @@
+run:
+  description: Runs the single installer in headless mode.

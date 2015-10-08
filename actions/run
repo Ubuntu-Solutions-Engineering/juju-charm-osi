@@ -1,0 +1,3 @@
+#!/bin/bash -ex
+
+su ubuntu -c "sudo openstack-install -c $CHARM_DIR/single-config.yaml"

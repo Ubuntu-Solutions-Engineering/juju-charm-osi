@@ -4,5 +4,5 @@ maintainer: Adam Stokes <adam.stokes@ubuntu.com>
 description: |
   Installs the Single version of the Ubuntu OpenStack Installer
 tags:
-  - misc
+  - openstack
 subordinate: false
