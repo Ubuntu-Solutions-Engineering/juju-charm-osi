@@ -7,4 +7,7 @@ This is more than likely not what you want, pretty specific to our testing needs
 
 Step by step instructions on using the charm:
 
-    juju deploy osi-single
+```
+juju deploy osi-single
+juju action do osi-single/0 run
+```
