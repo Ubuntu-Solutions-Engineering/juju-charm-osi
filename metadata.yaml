@@ -1,0 +1,8 @@
+name: openstack-installer-single
+summary: Ubuntu OpenStack Single Installer
+maintainer: Adam Stokes <adam.stokes@ubuntu.com>
+description: |
+  Installs the Single version of the Ubuntu OpenStack Installer
+tags:
+  - misc
+subordinate: false
