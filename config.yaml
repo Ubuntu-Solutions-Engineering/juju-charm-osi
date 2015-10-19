@@ -1,14 +1,29 @@
 options:
-  string-option:
+  install-type:
     type: string
-    default: "Default Value"
-    description: "A short description of the configuration option"
-  boolean-option:
-    type: boolean
-    default: False
-    description: "A short description of the configuration option"
-  int-option:
-    type: int
-    default: 9001
-    description: "A short description of the configuration option"
-
+    default: "Single"
+    description: "Type of installation to perform, Single, Multi, or OpenStack Autopilot"
+  maas-server:
+    type: string
+    default: "127.0.0.1"
+    description: "IP address of MAAS server if multi install"
+  maas-apikey:
+    type: string
+    default: ""
+    description: "MAAS API key of user to access nodes if multi install"
+  landscape-name:
+    type: string
+    default: "ubuntu"
+    description: "Admin name"
+  landscape-email:
+    type: string
+    default: "root@localhost"
+    description: "Admin email"
+  openstack-release:
+    type: string
+    default: "kilo"
+    description: "OpenStack release to deploy"
+  ubuntu-series:
+    type: string
+    default: "trusty"
+    description: "Ubuntu release to deploy onto"

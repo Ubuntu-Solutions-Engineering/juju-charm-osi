@@ -1,0 +1,12 @@
+headless: true
+openstack_password: {{ openstack_password }}
+openstack_release: {{ openstack_release }}
+ubuntu_series: {{ ubuntu_series }}
+install_type: {{ install_type }}
+landscapecreds:
+  admin_email: {{ lanscape_email }}
+  admin_name: {{ landscape_name }}
+  system_email: {{ landscape_email }}
+maascreds:
+  api_host: {{ maas_server }}
+  api_key: {{ maas_apikey }}

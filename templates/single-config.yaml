@@ -1,3 +1,0 @@
-headless: true
-openstack_password: password
-install_type: Single
