@@ -1,2 +1,4 @@
-run:
-  description: Runs the single installer in headless mode.
+run-test:
+  description: |
+    Runs the installer in headless mode executing integration
+    tests.

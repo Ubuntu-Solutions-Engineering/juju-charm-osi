@@ -1,5 +1,0 @@
-#!/bin/bash
-
-apt-add-repository -y ppa:cloud-installer/experimental
-apt-get update
-apt-get install -y openstack

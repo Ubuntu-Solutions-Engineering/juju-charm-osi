@@ -1,0 +1,7 @@
+#!/bin/bash -ex
+
+INSTALL_TYPE=`config-get install_type`
+
+if [ $INSTALL_TYPE eq 'multi' ]; then
+    su ubuntu -c "sudo openstack-install -c $CHARM_DIR/multi-config.yaml"
+fi

@@ -1,8 +1,8 @@
 name: osi-single
-summary: Ubuntu OpenStack Single Installer
+summary: Ubuntu OpenStack Installer
 maintainer: Adam Stokes <adam.stokes@ubuntu.com>
 description: |
-  Installs the Single version of the Ubuntu OpenStack Installer
+  Installs Ubuntu OpenStack Installer for deployment
+  testing.
 tags:
   - openstack
-subordinate: false
