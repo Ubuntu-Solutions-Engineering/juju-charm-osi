@@ -40,7 +40,6 @@ def _build_context():
     return ctx
 
 
-@hook('upgrade-charm')
 @hook('install')
 def install():
     hookenv.status_set('maintenance',
