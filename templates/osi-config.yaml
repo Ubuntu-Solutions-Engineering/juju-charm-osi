@@ -10,3 +10,4 @@ landscapecreds:
 maascreds:
   api_host: {{ maas_server }}
   api_key: {{ maas_apikey }}
+upstream_ppa: {{ upstream_ppa }}

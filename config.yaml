@@ -23,7 +23,15 @@ options:
     type: string
     default: "kilo"
     description: "OpenStack release to deploy"
+  openstack-password:
+    type: string
+    default: pass
+    description: "Default OpenStack password"
   ubuntu-series:
     type: string
     default: "trusty"
     description: "Ubuntu release to deploy onto"
+  upstream-ppa:
+    type: bool
+    default: true
+    description: "Use experimental PPA"

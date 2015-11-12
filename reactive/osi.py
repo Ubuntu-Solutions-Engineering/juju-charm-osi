@@ -35,7 +35,8 @@ def _build_context():
             'admin_email': config['landscape-email'],
             'system_email': config['landscape-email'],
             'admin_name': config['landscape-name']
-        }
+        },
+        'upstream_ppa': config['upstream-ppa']
     }
     return ctx
 
