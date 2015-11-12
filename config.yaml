@@ -32,6 +32,6 @@ options:
     default: "trusty"
     description: "Ubuntu release to deploy onto"
   upstream-ppa:
-    type: bool
+    type: boolean
     default: true
     description: "Use experimental PPA"
