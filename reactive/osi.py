@@ -58,7 +58,10 @@ def install():
                       os.path.join(CHARM_DIR, 'openstack-tests')])
     if ret > 0:
         hookenv.status_set('error', 'Failed to clone openstack-tests repo')
-        sys.exit(1)
+        sys.exit(0)
+    hookenv.status_set('maintenance', 'Installing OpenStack')
+    ret = check_call(['sudo', 'openstack-install', '-c',
+                      os.path.join(CHARM_TMP, 'osi-config.yaml')])
     hookenv.status_set('active', 'ready')
 
 
