@@ -1,6 +1,5 @@
 #!/bin/bash -ex
 
-cd $CHARM_DIR/openstack-tests
-# FIXME: make configurable based on type of install
-su ubuntu -c "py.test-3 tests/test_single.py"
-status-set active "Ready for test runs"
+py.test-3 $CHARM_DIR/openstack-installer/integrations
+
+status-set active "Completed test run."

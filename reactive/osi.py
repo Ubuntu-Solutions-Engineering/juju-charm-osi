@@ -1,5 +1,4 @@
 import os
-import sys
 from subprocess import check_call
 from charmhelpers.core import hookenv
 from charmhelpers.core.templating import render
@@ -17,8 +16,6 @@ from charms.reactive import (
 config = hookenv.config()
 CHARM_DIR = os.getenv('CHARM_DIR')
 CHARM_TMP = os.path.join(CHARM_DIR, 'tmp')
-OSI_TESTS_REPO = ("https://github.com/Ubuntu-Solutions-Engineering/"
-                  "openstack-tests.git")
 
 
 def _build_context():
@@ -27,15 +24,6 @@ def _build_context():
         'openstack_password': config['openstack-password'],
         'openstack_release': config['openstack-release'],
         'ubuntu_series': config['ubuntu-series'],
-        'maascreds': {
-            'api_host': config['maas-server'],
-            'api_key': config['maas-apikey']
-        },
-        'landscapecreds': {
-            'admin_email': config['landscape-email'],
-            'system_email': config['landscape-email'],
-            'admin_name': config['landscape-name']
-        },
         'upstream_ppa': config['upstream-ppa']
     }
     return ctx
@@ -54,14 +42,9 @@ def install():
            target=os.path.join(CHARM_TMP, 'osi-config.yaml'),
            context=ctx)
     hookenv.status_set('maintenance', 'Cloning openstack-tests')
-    ret = check_call(['git', 'clone', '-q', OSI_TESTS_REPO,
-                      os.path.join(CHARM_DIR, 'openstack-tests')])
-    if ret > 0:
-        hookenv.status_set('error', 'Failed to clone openstack-tests repo')
-        sys.exit(0)
     hookenv.status_set('maintenance', 'Installing OpenStack')
-    ret = check_call(['sudo', 'openstack-install', '-c',
-                      os.path.join(CHARM_TMP, 'osi-config.yaml')])
+    check_call(['sudo', 'openstack-install', '-c',
+                os.path.join(CHARM_TMP, 'osi-config.yaml')])
     hookenv.status_set('active', 'ready')
 
 
